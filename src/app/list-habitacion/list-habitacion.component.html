@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="col-md-12">
+    <h2 class="my-title">Listado habitaciones</h2>
+    <button class="btn btn-primary my-btn" (click)="AgregarHabitacion()"> Agregar</button>
+    
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr >
+          <th>Código</th>
+          <th>Descripcion</th>
+          <th>Estado</th>
+          <th>Precio</th>
+          <th colspan="2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let habitacion of habitaciones">
+          <td>{{habitacion.codigo}}</td>
+          <td>{{habitacion.descripcion}}</td>
+          <td>{{habitacion.estado}}</td>
+          <td>{{habitacion.precio}}</td>
+          <td><button class="btn btn-danger" (click)="ActualizarHabitacion(habitacion)" >Actualizar</button></td>
+          <td><button class="btn btn-danger" (click)="EliminarHabitacion(habitacion)" >Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

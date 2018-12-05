@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="col-md-12">
+    <h2 class="my-title">Detalle habitacion</h2>
+      <p>Habitación : {{habitacion.codigo}}</p>
+      <p>Descripción : {{habitacion.descripcion}}</p>
+      <p>Estado : {{habitacion.estado}}</p>
+      <p>Precio : {{habitacion.precio}}</p>
+      <p>Huespedes : {{habitacion.huespedes}}</p>
+      <img width="50%" height="50%" src="{{habitacion.imagen}}">
+      <br><br>
+      <form [formGroup]="AgregarReservaForm" (ngSubmit)="AgregarReserva()">
+        <div class="form-group">
+          <label for="fechaInicio">fechaInicio:</label>
+          <input type="date" formControlName="fechaInicio" placeholder="MM/dd/yyyy" name="fechaInicio" class="form-control" id="fechaInicio">
+          <label for="cantidadDias">cantidadDias:</label>
+          <input type="text" formControlName="cantidadDias" placeholder="cantidadDias" name="cantidadDias" class="form-control" id="cantidadDias">
+        </div>
+        <button class="btn btn-success">Reservar</button>
+        <button [routerLink]="['/add-reserva1']" class="btn btn-danger">Cancelar</button>
+      </form>
+  </div>
+</div>

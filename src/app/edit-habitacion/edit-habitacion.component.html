@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-md-12">
+    <h2 class="text-center">Actualizar Habitacion</h2>
+    <form [formGroup]="ActualizarHabitacionForm" (ngSubmit)="ActualizarHabitacion()">
+      <div class="form-group">
+        <label for="codigo">Código:</label>
+        <input type="text" formControlName="codigo" placeholder="Codigó" name="codigo" class="form-control" id="codigo" readonly>
+        <label for="descripcion">Descripcion:</label>
+        <input type="text" formControlName="descripcion" placeholder="descripcion" name="descripcion" class="form-control" id="descripcion">
+       
+        <label for="huespedes">Huespedes:</label>
+        <input type="text" formControlName="huespedes" placeholder="huespedes" name="huespedes" class="form-control"
+          id="huespedes">
+       
+        <label for="imagen">Imagen:</label>
+        <input type="text" formControlName="imagen" placeholder="imagen" name="imagen" class="form-control"
+          id="imagen">   
+         <label for="precio">Precio:</label>
+        <input type="text" formControlName="precio" placeholder="precio" name="precio" class="form-control"
+          id="precio">      
+      </div>
+      <button class="btn btn-success">Actualizar</button>
+      <button [routerLink]="['/list-habitacion']" class="btn btn-danger">Cancelar</button>
+    </form>
+  </div>
+</div>

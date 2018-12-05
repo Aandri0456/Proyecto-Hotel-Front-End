@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="col-md-12">
+    <h2 class="my-title">Realizar check out</h2>
+    
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr >
+          <th>Código</th>
+          <th>Fecha de inicio</th>
+          <th>Habitacion</th>
+          <th>Descripción</th>
+          <th>Total</th>
+          <th colspan="3">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas">
+          <td>{{reserva.codigo}}</td>
+          <td>{{formatearFecha(reserva.fechaInicio)}}</td>
+          <td>{{reserva.habitacion.codigo}}</td>
+          <td>{{reserva.habitacion.descripcion}}</td>
+          <td>{{reserva.total}}</td>
+          <td ><button class="btn btn-danger" (click)="PagarReserva(reserva.total,reserva.codigo,reserva.habitacion)" >Pagar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

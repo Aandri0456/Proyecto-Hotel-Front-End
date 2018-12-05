@@ -1,0 +1,60 @@
+<div>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand">{{title}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li *ngIf="EmpleadoLogueado()&&Logueado()" ngbDropdown class="nav-item">
+            <a ngbDropdownToggle class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Mantenimientos
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+              <a [routerLink]="['/list-empleado']" class=" dropdown-item">Listado de empleados <span class="sr-only">(current)</span></a>
+              <div class="dropdown-divider"></div>
+              <a [routerLink]="['/list-habitacion']" class=" dropdown-item">Listado de habitaciones <span class="sr-only">(current)</span></a>
+            </div>
+          </li>
+          <li *ngIf="UsuarioLogueado()&&Logueado()" ngbDropdown class="nav-item">
+            <a ngbDropdownToggle class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Reserva
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+              <a [routerLink]="['/add-reserva1']" class=" dropdown-item">Agregar reserva<span class="sr-only">(current)</span></a>
+              <div class="dropdown-divider"></div>
+              <a [routerLink]="['/list-my-reserva']" class=" dropdown-item">Ver mis reservas<span class="sr-only">(current)</span></a>
+            </div>
+          </li>
+          <li *ngIf="EmpleadoLogueado()&&Logueado()" ngbDropdown class="nav-item">
+            <a ngbDropdownToggle class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Recepcionista
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+              <a [routerLink]="['/check-in']" class=" dropdown-item">Check in<span class="sr-only">(current)</span></a>
+              <a [routerLink]="['/check-out']" class=" dropdown-item">Check out<span class="sr-only">(current)</span></a>
+
+            </div>
+          </li>
+          <li *ngIf="EmpleadoLogueado()&&Logueado()" ngbDropdown class="nav-item">
+            <a ngbDropdownToggle class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Reportes
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown">
+              <a [routerLink]="['/reporte']" class=" dropdown-item">Ver habitaciones más reservadas<span class="sr-only">(current)</span></a>
+            </div>
+          </li>
+        </ul>
+        <button *ngIf="Logueado()" class="navbar-brand btn myNav" (click)="Logout()">Salir<span class="sr-only">(current)</span></button>
+      </div>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+</div>

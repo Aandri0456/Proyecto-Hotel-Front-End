@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-md-12">
+    <h2 class="text-center">Login</h2>
+    <form [formGroup]="LoginForm" (ngSubmit)="Login()">
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="text" formControlName="correo" placeholder="correo" name="correo" class="form-control" id="correo">
+        <label for="descripcion">Contraseña:</label>
+        <input type="password" formControlName="password" placeholder="Contraseña" name="password" class="form-control" id="password">
+      </div>
+      <button class="btn btn-success">Ingresar</button>
+    </form>
+    <button [routerLink]="['/add-usuario']" class="btn btn-primary my-btn" > Registrarse</button>
+    <button [routerLink]="['/login-empleado']" class="btn btn-danger">Solo empleados</button>
+
+  </div>
+</div>

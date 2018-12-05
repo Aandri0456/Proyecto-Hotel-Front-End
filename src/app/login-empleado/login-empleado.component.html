@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-md-12">
+    <h2 class="text-center">Login Empleados</h2>
+    <form [formGroup]="LoginForm" (ngSubmit)="Login()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" placeholder="nombre" name="nombre" class="form-control" id="nombre">
+        <label for="dni">DNI:</label>
+        <input type="password" formControlName="dni" placeholder="DNI" name="dni" class="form-control" id="dni">
+      </div>
+      <button class="btn btn-success">Ingresar</button>
+      <button [routerLink]="['/login']" class="btn btn-danger">Solo clientes</button>
+
+    </form>
+  </div>
+</div>
